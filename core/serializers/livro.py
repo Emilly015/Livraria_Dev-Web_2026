@@ -1,0 +1,9 @@
+from attr import fields
+from core.models.livro import Livro
+from rest_framework.serializers import ModelSerializer
+
+
+class LivroSerializer(ModelSerializer):
+    class Meta:
+        model = Livro
+        fields = '__all__'
