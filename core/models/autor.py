@@ -2,7 +2,12 @@ from django.db import models
 
 
 class Autor(models.Model):
-    descricao = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100)
+    email = models.EmailField(max_length=254, blank=True, null=True)
 
     def __str__(self):
-        return self.descricao
+        return f"{self.nome} ({self.email})"
+    
+    class Meta:
+        verbose_name = 'autor'
+        verbose_name_plural = 'autores'
